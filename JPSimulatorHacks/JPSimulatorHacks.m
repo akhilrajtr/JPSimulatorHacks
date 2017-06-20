@@ -99,6 +99,18 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
                                allowed:YES];
 }
 
++ (BOOL)denyAccessToAddressBook {
+    return [self changeAccessToService:JPSimulatorHacksServiceAddressBook
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToAddressBookForBundleIdentifier:(NSString *)bundleIdentifier {
+    return [self changeAccessToService:JPSimulatorHacksServiceAddressBook
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
+}
+
 + (BOOL)grantAccessToPhotos
 {
     return [self changeAccessToService:JPSimulatorHacksServicePhotos
@@ -111,6 +123,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
     return [self changeAccessToService:JPSimulatorHacksServicePhotos
                       bundleIdentifier:bundleIdentifier
                                allowed:YES];
+}
+
++ (BOOL)denyAccessToPhotos
+{
+    return [self changeAccessToService:JPSimulatorHacksServicePhotos
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToPhotosForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServicePhotos
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
 }
 
 + (BOOL)grantAccessToCalendar
@@ -127,6 +153,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
                                allowed:YES];
 }
 
++ (BOOL)denyAccessToCalendar
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceCalendar
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToCalendarForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceCalendar
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
+}
+
 + (BOOL)grantAccessToHomeKit
 {
     return [self changeAccessToService:JPSimulatorHacksServiceHomeKit
@@ -139,6 +179,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
     return [self changeAccessToService:JPSimulatorHacksServiceHomeKit
                       bundleIdentifier:bundleIdentifier
                                allowed:YES];
+}
+
++ (BOOL)denyAccessToHomeKit
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceHomeKit
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToHomeKitForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceHomeKit
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
 }
 
 + (BOOL)grantAccessToContacts
@@ -165,6 +219,30 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
 #endif
 }
 
++ (BOOL)denyAccessToContacts
+{
+#if defined(__IPHONE_9_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_9_0
+    return [self changeAccessToService:JPSimulatorHacksServiceContacts
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+#else
+    NSLog(JPSimulatorHacksServiceContactsError);
+    return NO;
+#endif
+}
+
++ (BOOL)denyAccessToContactsForBundleIdentifier:(NSString *)bundleIdentifier
+{
+#if defined(__IPHONE_9_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_9_0
+    return [self changeAccessToService:JPSimulatorHacksServiceContacts
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
+#else
+    NSLog(JPSimulatorHacksServiceContactsError);
+    return NO;
+#endif
+}
+
 + (BOOL)grantAccessToCamera
 {
     return [self changeAccessToService:JPSimulatorHacksServiceCamera
@@ -177,6 +255,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
     return [self changeAccessToService:JPSimulatorHacksServiceCamera
                       bundleIdentifier:bundleIdentifier
                                allowed:YES];
+}
+
++ (BOOL)denyAccessToCamera
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceCamera
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToCameraForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceCamera
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
 }
 
 + (BOOL)grantAccessToMicrophone
@@ -193,6 +285,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
                                allowed:YES];
 }
 
++ (BOOL)denyAccessToMicrophone
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceMicrophone
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToMicrophoneForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceMicrophone
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
+}
+
 + (BOOL)grantAccessToReminders
 {
     return [self changeAccessToService:JPSimulatorHacksServiceReminders
@@ -207,6 +313,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
                                allowed:YES];
 }
 
++ (BOOL)denyAccessToReminders
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceReminders
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToRemindersForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceReminders
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
+}
+
 + (BOOL)grantAccessToTwitter
 {
     return [self changeAccessToService:JPSimulatorHacksServiceTwitter
@@ -219,6 +339,20 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
     return [self changeAccessToService:JPSimulatorHacksServiceTwitter
                       bundleIdentifier:bundleIdentifier
                                allowed:YES];
+}
+
++ (BOOL)denyAccessToTwitter
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceTwitter
+                      bundleIdentifier:[NSBundle mainBundle].bundleIdentifier
+                               allowed:NO];
+}
+
++ (BOOL)denyAccessToTwitterForBundleIdentifier:(NSString *)bundleIdentifier
+{
+    return [self changeAccessToService:JPSimulatorHacksServiceTwitter
+                      bundleIdentifier:bundleIdentifier
+                               allowed:NO];
 }
 
 + (void)setTimeout:(NSTimeInterval)timeout
@@ -292,7 +426,7 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
         if (![db open]) continue;
 
         NSString *query = @"REPLACE INTO access (service, client, client_type, allowed, prompt_count) VALUES (?, ?, ?, ?, ?)";
-        NSArray *parameters = @[service, bundleIdentifier, @"0", [@(allowed) stringValue], @"0"];
+        NSArray *parameters = @[service, bundleIdentifier, @"0", [@(allowed) stringValue], @"1"];
         if ([db executeUpdate:query withArgumentsInArray:parameters]) {
             success = YES;
         }

@@ -38,31 +38,49 @@
 + (void)editPreferences:(void (^)(NSMutableDictionary *preferences))block;
 
 + (BOOL)grantAccessToAddressBook;
++ (BOOL)denyAccessToAddressBook;
 + (BOOL)grantAccessToAddressBookForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToAddressBookForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToPhotos;
 + (BOOL)grantAccessToPhotosForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToPhotos;
++ (BOOL)denyAccessToPhotosForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToCalendar;
 + (BOOL)grantAccessToCalendarForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToCalendar;
++ (BOOL)denyAccessToCalendarForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToHomeKit;
 + (BOOL)grantAccessToHomeKitForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToHomeKit;
++ (BOOL)denyAccessToHomeKitForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToContacts;
 + (BOOL)grantAccessToContactsForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToContacts;
++ (BOOL)denyAccessToContactsForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToCamera;
 + (BOOL)grantAccessToCameraForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToCamera;
++ (BOOL)denyAccessToCameraForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToMicrophone;
 + (BOOL)grantAccessToMicrophoneForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToMicrophone;
++ (BOOL)denyAccessToMicrophoneForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToReminders;
 + (BOOL)grantAccessToRemindersForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToReminders;
++ (BOOL)denyAccessToRemindersForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (BOOL)grantAccessToTwitter;
 + (BOOL)grantAccessToTwitterForBundleIdentifier:(NSString *)bundleIdentifier;
++ (BOOL)denyAccessToTwitter;
++ (BOOL)denyAccessToTwitterForBundleIdentifier:(NSString *)bundleIdentifier;
 
 + (void)setTimeout:(NSTimeInterval)timeout;
 
